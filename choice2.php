@@ -20,9 +20,9 @@ echo '<form action="wykres.php" method="POST">
 	<input type="submit" value="Kołowy">
 </form>';
 echo '<form action="wykres.php" method="POST">
-	<input type="hidden" name="typ" value="doughut"/>
+	<input type="hidden" name="typ" value="doughnut"/>
 	<input type="hidden" name="nazwa" value="'.$nazwa.'"/>
-	<input type="submit" value="doughut">
+	<input type="submit" value="Doughnut">
 </form>';
 echo '<form action="wykres.php" method="POST">
 	<input type="hidden" name="typ" value="map"/>
