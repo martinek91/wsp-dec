@@ -6,26 +6,14 @@ if ($_FILES){
 			echo 'Błąd! Plik jest za duży!';
 		}
 		else {
-			echo 'Odebrano plik. Początkowa nazwa: '.$_FILES['plik']['name'];
+			echo 'Odebrano plik: '.$_FILES['plik']['name'];
 			echo '<br/>';
 			if (isset($_FILES['plik']['type'])) {
-				echo 'Typ: '.$_FILES['plik']['type'].'<br/>';
+				//echo 'Typ: '.$_FILES['plik']['type'].'<br/>';
 				if (move_uploaded_file($_FILES['plik']['tmp_name'], $_SERVER['DOCUMENT_ROOT'].'/../tmp/foto/'.$_FILES['plik']['name'])){
-					echo 'Zapisano plik';
-					$row = 1;
-					$uchwyt = fopen ($_SERVER['DOCUMENT_ROOT'].'/../tmp/foto/'.$_FILES['plik']['name'],"r");
-					while (($data = fgetcsv($uchwyt, 1000, ",")) !== FALSE)  {
-						$num = count($data);
-						//echo "<p> $num pól w lini $row: <br /></p>\n";
-						for ($c=0; $c < $num; $c++) {
-							//echo $data[$c] . "<br />\n";
-							$wykres[$row][$c] = $data[$c];
-						}
-						$row++;
-					}
-					fclose ($uchwyt);
-					echo 'Wybierz typ wykresu:';
-					
+					//echo 'Zapisano plik';
+					$nazwa = $_FILES['plik']['name'];
+					include 'choice2.php';
 				}
 				else {
 					echo 'Błąd zapisu';
