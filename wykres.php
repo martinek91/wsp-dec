@@ -24,7 +24,7 @@ error_reporting( E_ALL );
 			include 'wykres2.php';
 		}
 		else {
-			echo '<a href="index.html">Powrót</a>';
+			echo '<a href="index.php">Powrót</a>';
 		}
 		echo '</div>';
 	}
