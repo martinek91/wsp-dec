@@ -1,0 +1,82 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['geochart']});
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Country', 'Country','cos'],
+          ['Germany', 200, 125],
+          ['United States', 300,125],
+          ['Brazil', 400,652],
+          ['Canada', 500,63],
+          ['France', 600,73],
+	      ['Poland', 800,73],
+          ['RU', 700,1],
+		  ["Japan", 300,600]
+        ]);
+
+        var options = {colors: ['red']};
+
+        var chart = new google.visualization.GeoChart(document.getElementById('chart'));
+
+        chart.draw(data, options);
+      }/*
+		google.charts.load('current', {'packages':['geochart']});
+		google.charts.setOnLoadCallback(drawRegionsMap);
+
+		var inputData = [
+		  ['Voivodeship', 'Float'],
+		  ['Lubelskie', Math.random()],
+		  ['Podlaskie', Math.random()],
+		  ['Kujawsko-Pomorskie', Math.random()],
+		  ['Dolnośląskie', Math.random()],
+		  ['Świętokrzyskie', Math.random()],
+		  ['Warmińsko-Mazurskie', Math.random()],
+		  ['Pomorskie', Math.random()],
+		  ['Lubuskie', Math.random()],
+		  ['Zachodniopomorskie', Math.random()],
+		  ['Mazowieckie', Math.random()],
+		  ['Opolskie', Math.random()],
+		  ['Łódzkie', Math.random()],
+		  ['Małopolskie', Math.random()],
+		  ['Śląskie', Math.random()],
+		  ['Podkarpackie', Math.random()],
+		  ['Wielkopolskie', Math.random()],
+		];
+
+		function drawRegionsMap() {
+
+		  var data = google.visualization.arrayToDataTable(inputData);
+
+		  var options = {
+			region: 'PL',
+			resolution: 'provinces',
+			colors: ['magenta'],
+			datalessRegionColor: '#FAFAFA',
+			colorAxis: {minValue: 0.1, maxValue: 0.95}
+		  };
+
+		  var chart = new google.visualization.GeoChart(document.getElementById('chart'));
+
+		  google.visualization.events.addListener(chart, 'select', function() {
+			var selection = chart.getSelection();
+			for (var i = 0; i < selection.length; i++) {
+			  console.log(selection[i].row);
+			  console.log(data);
+			  alert('Float for voivodeship ' + inputData[1 + selection[i].row][0] + ' is ' + inputData[1 + selection[i].row][1]);
+			}
+		  });
+
+		  chart.draw(data, options);
+		}*/
+    </script>
+  </head>
+  <body>
+    <div id="chart" style="width: 900px; height: auto;"></div>
+  </body>
+</html>
+

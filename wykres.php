@@ -8,6 +8,7 @@ error_reporting( E_ALL );
 	<meta charset="UTF-8">
 	<title>Wspieranie decyzji</title>
 	<script type="text/javascript" src="canvasjs.min.js"></script>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 <body>
 	<center>

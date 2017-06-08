@@ -1,5 +1,5 @@
 <?php
-	if ($typ != 'mapa'){
+	if ($typ != 'map'){
 		echo '<script type="text/javascript">
 		window.onload = function () {
 		var chart = new CanvasJS.Chart("chartContainer", {
@@ -30,5 +30,29 @@
 		}
 		</script>
 		<div id="chartContainer" style="height: 900px; width: auto;"></div>';
+	}
+	else {
+		?><script type="text/javascript">
+			google.charts.load('current', {'packages':['geochart']});
+			google.charts.setOnLoadCallback(drawRegionsMap);
+			function drawRegionsMap() {
+				var data = google.visualization.arrayToDataTable([
+					['Country', 'Country','cos'],
+					['Germany', 200, 125],
+					['United States', 300,125],
+					['Brazil', 400,652],
+					['Canada', 500,63],
+					['France', 600,73],
+					['Poland', 800,73],
+					['RU', 700,1],
+					["Japan", 300,600]
+				]);
+				var options = {colors: ['red']};
+				var chart = new google.visualization.GeoChart(document.getElementById('chart'));
+				chart.draw(data, options);
+			}
+		</script>
+		<div id="chart" style="width: 900px; height: auto;"></div>
+		<?php
 	}
 ?>
