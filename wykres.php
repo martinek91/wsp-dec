@@ -7,15 +7,16 @@ error_reporting( E_ALL );
 <head>
 	<meta charset="UTF-8">
 	<title>Wspieranie decyzji</title>
-	<script type="text/javascript" src="canvasjs.min.js"></script>
+	<script type="text/javascript" src="js/canvasjs.min.js"></script>
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<link href="css/bootstrap.css" rel="stylesheet">
+    	<script type="text/javascript" src="js/bootstrap.js"></script>
 </head>
-<body>
+<body class="bg-info">
 	<center>
 	<?php
 	if (true){
-		echo '<div>Jakiś nagłówek</div><br><br>';
-		echo '<div>';
+		echo '<div class="bg-info">';
 		if ($_POST) {
 			$typ = $_POST['typ'];
 			$nazwa = $_POST['nazwa'];
